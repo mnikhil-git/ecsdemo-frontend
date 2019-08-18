@@ -1,6 +1,6 @@
 version: 1
 task_definition:
-  task_execution_role: ecsTaskExecutionRole
+  task_execution_role: arn:aws:iam::200310876957:role/fargate-demo-ECSTaskExecutionRole-18EAQ6ZUINC22
   ecs_network_mode: awsvpc
   task_size:
     mem_limit: 0.5GB
@@ -9,9 +9,9 @@ run_params:
   network_configuration:
     awsvpc_configuration:
       subnets:
-        - "subnet-07105dbab6f04ae7f"
-        - "subnet-086d522cc6c273ac1"
-        - "subnet-0519235cdff9e7013"
+        - "subnet-013eb058ccda8cde6"
+        - "subnet-005c4bfefa06fd252"
+        - "subnet-082e99f42d862b07f"
       security_groups:
-        - "sg-0e5cd18b6fbb61668"
+        - "sg-0ee20e4baa353e81e"
       assign_public_ip: DISABLED
