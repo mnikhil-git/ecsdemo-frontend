@@ -6,12 +6,12 @@ WORKDIR /usr/src/app
 RUN apt-get update && apt-get -y install iproute2 curl jq libgmp3-dev ruby-dev build-essential libsqlite3-dev && \
     bundle install && \
     apt-get autoremove -y --purge && \
-    apt-get remove -y --auto-remove --purge ruby-dev libgmp3-dev build-essential libsqlite3-dev && \
+    apt-get remove -y --auto-remove --purge libgmp3-dev build-essential  && \
     apt-get clean && \
     rm -rvf /root/* /root/.gem* /var/cache/*
 
-RUN bundle update sqlite3
-RUN bundle update nokogiri
+RUN bundle install sqlite3
+RUN bundle install nokogiri
 
 COPY . /usr/src/app
 RUN chmod +x /usr/src/app/startup.sh
